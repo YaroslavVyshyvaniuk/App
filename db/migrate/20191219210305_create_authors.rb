@@ -1,0 +1,12 @@
+class CreateAuthors < ActiveRecord::Migration[5.2]
+  def change
+    create_table :authors do |t|
+      t.string :name
+      t.string :surname
+      t.integer :age
+      t.belongs_to :publisher
+
+      t.timestamps
+    end
+  end
+end

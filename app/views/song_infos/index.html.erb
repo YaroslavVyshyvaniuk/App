@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Song Infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Duration</th>
+      <th>Date</th>
+      <th>Song</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @song_infos.each do |song_info| %>
+      <tr>
+        <td><%= song_info.duration %></td>
+        <td><%= song_info.date %></td>
+        <td><%= song_info.song.name %></td>
+        <td><%= link_to 'Show', song_info %></td>
+        <td><%= link_to 'Edit', edit_song_info_path(song_info) %></td>
+        <td><%= link_to 'Destroy', song_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Song Info', new_song_info_path %>
